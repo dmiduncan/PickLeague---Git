@@ -32,6 +32,16 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TestRunConfig|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\TestRunConfig\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,11 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PLHelper.cs" />
-    <Compile Include="src\main\MainPickLeague.cs" />
+    <Compile Include="src\main\helper\PLHelper.cs" />
+    <Compile Include="src\main\pickLeagueIO\inbound\XmlParser.cs" />
     <Compile Include="src\main\plData\Season.cs" />
     <Compile Include="src\main\plData\Team.cs" />
-    <Compile Include="PLConstants.cs" />
+    <Compile Include="src\main\helper\PLConstants.cs" />
     <Compile Include="src\main\plData\Matchup.cs" />
     <Compile Include="src\main\plData\Week.cs" />
     <Compile Include="src\main\plData\Player.cs" />
@@ -60,8 +70,9 @@
     <Compile Include="PLMainForm.Designer.cs">
       <DependentUpon>PLMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="src\main\PickLeagueMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\test\Sandbox.cs" />
     <EmbeddedResource Include="PLMainForm.resx">
       <DependentUpon>PLMainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -86,6 +97,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\main\pickLeagueIO\outbound\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
