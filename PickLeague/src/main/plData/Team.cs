@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PickLeague {
+namespace PickLeague.src.main.plData {
     class Team {
 
         private string teamName;
