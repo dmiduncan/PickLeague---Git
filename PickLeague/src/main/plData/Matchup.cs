@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace PickLeague {
     class Matchup {
-
-        // this is a test
-
+        
         private string homeTeamID;
         private string awayTeamID;
         private string matchupID;
