@@ -10,14 +10,12 @@ namespace PickLeague.src.main.plData {
         private string lastName;
         private int winsTotal;
         private int lossesTotal;
-        private Dictionary<string, int> winTotalForGivenWeek;
 
         public Player(string first, string last) {
             this.firstName = first;
             this.lastName = last;
             this.winsTotal = 0;
             this.lossesTotal = 0;
-            winTotalForGivenWeek = new Dictionary<string, int>();
         }
 
         public string getFirstName() {
@@ -50,14 +48,6 @@ namespace PickLeague.src.main.plData {
 
         public void setLossesTotal(int losses) {
             this.lossesTotal = losses;
-        }
-
-        public Dictionary<string, int> getWinTotalForGivenWeekDict() {
-            return this.winTotalForGivenWeek;
-        }
-
-        public void setWinTotalForGivenWeekDict(Dictionary<string, int> winTotalDict) {
-            this.winTotalForGivenWeek = winTotalDict;
         }
     }
 }
