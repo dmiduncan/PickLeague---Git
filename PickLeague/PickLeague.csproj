@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PLHelper.cs" />
+    <Compile Include="src\main\MainPickLeague.cs" />
     <Compile Include="src\main\plData\Season.cs" />
     <Compile Include="src\main\plData\Team.cs" />
     <Compile Include="PLConstants.cs" />
