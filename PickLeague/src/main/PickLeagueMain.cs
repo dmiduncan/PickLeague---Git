@@ -11,7 +11,7 @@ namespace PickLeague.main {
         /// </summary>
         [STAThread]
         static void Main() {
-            Season currentSeason = XmlParser.parseXmlIntoSeason();
+            Season currentSeason = PLXmlParser.parseXmlIntoSeason();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
