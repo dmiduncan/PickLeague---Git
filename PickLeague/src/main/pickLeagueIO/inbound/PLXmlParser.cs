@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Xml;
 
 namespace PickLeague.src.main.pickLeagueIO.inbound {
-    static class XmlParser {
+    static class PLXmlParser {
 
         public static Season parseXmlIntoSeason() {
             Season currSeason = new Season();
