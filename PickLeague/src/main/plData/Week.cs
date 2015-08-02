@@ -9,7 +9,8 @@ namespace PickLeague.src.main.plData {
 
         private string weekID;
         private string weekTitle;
-        private List<Matchup> matchupList;
+        // Matchup ID to Matchup
+        private Dictionary<string, Matchup> matchupList;
 
         public Week(string id, string title) {
             this.weekID = id;
@@ -32,11 +33,11 @@ namespace PickLeague.src.main.plData {
             this.weekTitle = title;
         }
 
-        public List<Matchup> getMatchupList() {
+        public Dictionary<string, Matchup> getMatchupList() {
             return this.matchupList;
         }
 
-        public void setMatchupList(List<Matchup> matchups) {
+        public void setMatchupList(Dictionary<string, Matchup> matchups) {
             this.matchupList = matchups;
         }
     }
