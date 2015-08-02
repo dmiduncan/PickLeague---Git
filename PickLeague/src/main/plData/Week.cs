@@ -10,11 +10,10 @@ namespace PickLeague.src.main.plData {
         private string weekID;
         private string weekTitle;
         // Matchup ID to Matchup
-        private Dictionary<string, Matchup> matchupList;
+        private List<Matchup> matchupList;
 
-        public Week(string id, string title) {
-            this.weekID = id;
-            this.weekTitle = title;
+        public Week() {
+            matchupList = new List<Matchup>();
         }
 
         public string getWeekID() {
@@ -25,19 +24,11 @@ namespace PickLeague.src.main.plData {
             this.weekID = id;
         }
 
-        public string getWeekTitle() {
-            return this.weekTitle;
-        }
-
-        public void setWeekTitle(string title) {
-            this.weekTitle = title;
-        }
-
-        public Dictionary<string, Matchup> getMatchupList() {
+        public List<Matchup> getMatchupList() {
             return this.matchupList;
         }
 
-        public void setMatchupList(Dictionary<string, Matchup> matchups) {
+        public void setMatchupList(List<Matchup> matchups) {
             this.matchupList = matchups;
         }
     }

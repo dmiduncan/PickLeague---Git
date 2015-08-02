@@ -10,12 +10,7 @@ namespace PickLeague.src.main.plData {
         private string homeTeamID;
         private string awayTeamID;
         private string matchupID;
-
-        public Matchup(string home, string away, string id) {
-            this.homeTeamID = home;
-            this.awayTeamID = away;
-            this.matchupID = id;
-        }
+        private string winnerID;
 
         public string getHomeTeamID() {
             return this.homeTeamID;
@@ -39,6 +34,14 @@ namespace PickLeague.src.main.plData {
 
         public void setMatchupID(string id) {
             this.matchupID = id;
+        }
+
+        public string getWinnerID() {
+            return this.winnerID;
+        }
+
+        public void setWinnerID(string id) {
+            this.winnerID = id;
         }
     }
 }

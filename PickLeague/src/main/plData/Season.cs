@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace PickLeague.src.main.plData {
     class Season {
-
-        // Dictionary formed of the Week ID to the Week
+        
         private Dictionary<string, Week> weekDict;
+        // this will either be set based on inbound value or set if new season is generated
         private string seasonID;
+        private List<Player> playerList;
 
-        public Season(string id) {
+        public Season() {
+            playerList = new List<Player>();
             weekDict = new Dictionary<string, Week>();
-            seasonID = id;
         }  
         
         public Dictionary<string, Week> getWeekDict() {
@@ -22,6 +23,14 @@ namespace PickLeague.src.main.plData {
 
         public void setWeekDict(Dictionary<string, Week> weeks) {
             this.weekDict = weeks;
+        }
+
+        public List<Player> getPlayerList() {
+            return this.playerList;
+        }
+
+        public void setPlayerList(List<Player> players) {
+            this.playerList = players;
         }
 
         public string getSeasonID() {

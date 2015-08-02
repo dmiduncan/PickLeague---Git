@@ -6,16 +6,24 @@ using System.Threading.Tasks;
 
 namespace PickLeague.src.main.plData {
     class Player {
+
+        private string playerID;
         private string firstName;
         private string lastName;
         private int winsTotal;
         private int lossesTotal;
 
-        public Player(string first, string last) {
-            this.firstName = first;
-            this.lastName = last;
+        public Player() {
             this.winsTotal = 0;
             this.lossesTotal = 0;
+        }
+
+        public string getPlayerID() {
+            return this.playerID;
+        }
+
+        public void setPlayerID(string id) {
+            this.playerID = id;
         }
 
         public string getFirstName() {
