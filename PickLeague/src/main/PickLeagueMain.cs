@@ -12,11 +12,15 @@ namespace PickLeague.main {
         /// </summary>
         [STAThread]
         static void Main() {
-            Season currentSeason = PLXmlParser.parseXmlIntoSeason();
-            
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PLMainForm());
+            PLSplash splash = new PLSplash();
+            Application.Run(splash);
+            
+            Season currentSeason = splash.getLoadSeason();
+            
+            Application.Run(new PLMainForm(currentSeason));
 
             PLXmlWriter.generateOutboundXml(currentSeason);
         }

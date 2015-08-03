@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PickLeague.src.main.plData {
-    class Season {
+    public class Season {
         
         private Dictionary<string, Week> weekDict;
         // this will either be set based on inbound value or set if new season is generated

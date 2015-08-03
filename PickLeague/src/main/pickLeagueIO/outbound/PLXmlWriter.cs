@@ -14,7 +14,7 @@ namespace PickLeague.src.main.pickLeagueIO.outbound {
             XmlWriterSettings settings = new XmlWriterSettings();
             settings.Indent = true;
             settings.NewLineOnAttributes = true;
-            XmlWriter writer = XmlWriter.Create("C:\\XmlTesting\\newTest.xml", settings);
+            XmlWriter writer = XmlWriter.Create("C:\\XmlTesting\\SaveFiles\\newTest.xml", settings);
 
             writer.WriteStartElement(PLConstants.DO_SEASON);
             writer.WriteElementString(PLConstants.SV_SEASON_ID, currSeason.getSeasonID());

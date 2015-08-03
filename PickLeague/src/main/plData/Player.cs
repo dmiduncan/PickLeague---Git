@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PickLeague.src.main.plData {
-    class Player {
+    public class Player {
 
         private string playerID;
         private string firstName;

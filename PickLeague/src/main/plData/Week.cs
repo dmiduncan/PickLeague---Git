@@ -5,10 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PickLeague.src.main.plData {
-    class Week {
+    public class Week {
 
         private string weekID;
-        private string weekTitle;
         // Matchup ID to Matchup
         private List<Matchup> matchupList;
 
