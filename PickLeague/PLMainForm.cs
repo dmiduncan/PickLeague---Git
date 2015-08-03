@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PickLeague.src.main.plData;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,10 @@ using System.Windows.Forms;
 
 namespace PickLeague {
     public partial class PLMainForm : Form {
-        public PLMainForm() {
+        Season currSeason;
+
+        public PLMainForm(Season season) {
+            currSeason = season;
             InitializeComponent();
         }
 

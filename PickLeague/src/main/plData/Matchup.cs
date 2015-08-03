@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PickLeague.src.main.plData {
-    class Matchup {
+    public class Matchup {
         
         private string homeTeamID;
         private string awayTeamID;

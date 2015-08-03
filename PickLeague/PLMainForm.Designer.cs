@@ -32,8 +32,9 @@
             this.Games = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PlayerOne = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PlayerTwo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.weekSelector = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.weekConfirm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,34 +72,41 @@
             this.PlayerTwo.Name = "PlayerTwo";
             this.PlayerTwo.ReadOnly = true;
             // 
-            // comboBox1
+            // weekSelector
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Week 1",
-            "Week 2"});
-            this.comboBox1.Location = new System.Drawing.Point(141, 391);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(276, 21);
-            this.comboBox1.TabIndex = 1;
+            this.weekSelector.FormattingEnabled = true;
+            this.weekSelector.Location = new System.Drawing.Point(87, 446);
+            this.weekSelector.Name = "weekSelector";
+            this.weekSelector.Size = new System.Drawing.Size(276, 21);
+            this.weekSelector.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 394);
-            this.label1.Name = "WeekSelect";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Location = new System.Drawing.Point(12, 449);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Week Select";
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // weekConfirm
+            // 
+            this.weekConfirm.Location = new System.Drawing.Point(378, 447);
+            this.weekConfirm.Name = "weekConfirm";
+            this.weekConfirm.Size = new System.Drawing.Size(130, 20);
+            this.weekConfirm.TabIndex = 3;
+            this.weekConfirm.Text = "Select Week";
+            this.weekConfirm.UseVisualStyleBackColor = true;
             // 
             // PLMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(595, 471);
+            this.Controls.Add(this.weekConfirm);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.weekSelector);
             this.Controls.Add(this.dataGridView1);
             this.Name = "PLMainForm";
             this.Text = "PickLeague";
@@ -114,8 +122,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Games;
         private System.Windows.Forms.DataGridViewTextBoxColumn PlayerOne;
         private System.Windows.Forms.DataGridViewTextBoxColumn PlayerTwo;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox weekSelector;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button weekConfirm;
     }
 }
 

@@ -34,5 +34,8 @@ namespace PickLeague {
         // Season Values
         public static readonly string SV_SEASON_ID = "SEASONID";
 
+        // Load Option Values
+        public static readonly string LO_LOAD_SEASON = "Load Existing Season";
+        public static readonly string LO_NEW_SEASON = "Start New Season";
     }
 }
