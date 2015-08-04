@@ -21,8 +21,6 @@ namespace PickLeague.main {
             Season currentSeason = splash.getLoadSeason();
             
             Application.Run(new PLMainForm(currentSeason));
-
-            PLXmlWriter.generateOutboundXml(currentSeason);
         }
     }
 }

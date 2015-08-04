@@ -9,29 +9,23 @@ using System.Xml;
 namespace PickLeague.src.main.pickLeagueIO.inbound {
     static class PLXmlParser {
 
-        public static Season parseXmlIntoSeason() {
+        public static Season parseXmlIntoSeason(string path) {
             Season currSeason = new Season();
             XmlDocument doc = new XmlDocument();
-
-            try {
-                string plXmlPath = "C:\\XmlTesting\\test2.xml"; // todo this needs to be made more dynamic
-                doc.Load(plXmlPath);
-                foreach (XmlNode node in doc.DocumentElement.ChildNodes) {
-                    if (nodeEquals(node, PLConstants.SV_SEASON_ID)) {
-                        currSeason.setSeasonID(node.InnerText);
-                    } else if (nodeEquals(node, PLConstants.DO_PLAYER_CONTAINER)) {
-                        foreach (XmlNode playerNode in node.ChildNodes) {
-                            parsePlayer(currSeason, playerNode);
-                        }
-                    } else if (nodeEquals(node, PLConstants.DO_WEEK_CONTAINER)) {
-                        foreach (XmlNode weekNode in node.ChildNodes) {
-                            parseWeek(currSeason, weekNode);    
-                        }
+             
+            doc.Load(path);
+            foreach (XmlNode node in doc.DocumentElement.ChildNodes) {
+                if (nodeEquals(node, PLConstants.SV_SEASON_ID)) {
+                    currSeason.setSeasonID(node.InnerText);
+                } else if (nodeEquals(node, PLConstants.DO_PLAYER_CONTAINER)) {
+                    foreach (XmlNode playerNode in node.ChildNodes) {
+                        parsePlayer(currSeason, playerNode);
+                    }
+                } else if (nodeEquals(node, PLConstants.DO_WEEK_CONTAINER)) {
+                    foreach (XmlNode weekNode in node.ChildNodes) {
+                        parseWeek(currSeason, weekNode);    
                     }
                 }
-            } catch (Exception e) {
-                Console.WriteLine(e.StackTrace);
-                Environment.Exit(0);
             }
 
             return currSeason;
