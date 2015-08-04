@@ -10,11 +10,12 @@ using System.Xml;
 namespace PickLeague.src.main.pickLeagueIO.outbound {
     static class PLXmlWriter {
 
-        public static void generateOutboundXml(Season currSeason) {
+        public static void generateOutboundXml(Season currSeason, string path) {
             XmlWriterSettings settings = new XmlWriterSettings();
             settings.Indent = true;
             settings.NewLineOnAttributes = true;
-            XmlWriter writer = XmlWriter.Create("C:\\XmlTesting\\SaveFiles\\newTest.xml", settings);
+            // todo add dynamic file saving.
+            XmlWriter writer = XmlWriter.Create(path, settings);
 
             writer.WriteStartElement(PLConstants.DO_SEASON);
             writer.WriteElementString(PLConstants.SV_SEASON_ID, currSeason.getSeasonID());

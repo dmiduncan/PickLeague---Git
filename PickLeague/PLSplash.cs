@@ -24,14 +24,27 @@ namespace PickLeague {
 
         private void PLSplash_Enter(object sender, EventArgs e) {
             string value = getSelectedPLLoadOptionOn();
-
+            bool proceedToClose = false;
+            
             if (string.Equals(PLConstants.LO_LOAD_SEASON, value)) {
-                currSeason = PLXmlParser.parseXmlIntoSeason();
+                string path = "";
+                OpenFileDialog loadSeasonDialog = new OpenFileDialog();
+                loadSeasonDialog.Title = "Open Season File";
+                loadSeasonDialog.Filter = "XML files|*.xml";
+                loadSeasonDialog.InitialDirectory = @"C:\Program Files (x86)\PickLeague\Seasons";
+                if (loadSeasonDialog.ShowDialog() == DialogResult.OK) {
+                    path = loadSeasonDialog.FileName;
+                    currSeason = PLXmlParser.parseXmlIntoSeason(path);
+                    proceedToClose = true;                           
+                }                    
             } else if (string.Equals(PLConstants.LO_NEW_SEASON, value)) {
                 currSeason = new Season();
+                proceedToClose = true;
             }
 
-            this.Close();
+            if (proceedToClose) {
+                this.Close();
+            }
         }
 
         // Closes the application if the close button is clicked on the splash.
